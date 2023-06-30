@@ -1,66 +1,52 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 課題 - PHPによる登録処理画面 -　
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## ①課題の内容（どんな作品）
+- MVPの部品として、PHPとLaravelを使ったサーバーサイド(フロントエンド)の一部を作った。
+- 下図、赤線で囲った部分の一部
+    - ![image](https://github.com/seimei-san/wip_app_1/assets/53326909/d0e4913f-4761-40db-8bfd-fe20f8835eee)
 
-## About Laravel
+- 今回は、MVCモデルに従って、以下の情報を登録、参照、削除するための、M:ModelとC:Conrollerの一部を作った。
+    - ユーザー (user)
+    - 組織情報 (domain)
+    - ユーザーグループ (group)
+    - ユーザープロファイル (profile)
+    - ユーザーとグループの紐付け (user group)
+- V:Viewを作る時間がなかったので、とりあえずMとCの動作を確認するために、ヤマザキ先生のビデオで紹介されたViewを改造して作った。
+    - 組織情報 (domain)
+    - ![image](https://github.com/seimei-san/wip_app_1/assets/53326909/959466c5-e7b4-4b85-b576-290f349dea01)
+    - ユーザー (user)
+    - ![image](https://github.com/seimei-san/wip_app_1/assets/53326909/858ee963-7623-4d79-9b4c-056307e305e0)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ②工夫した点・こだわった点
+- 以下の機能を実装しても、Laravelのフレームワーク上で正常に動作させることに成功した
+    - セキュリティーを向上させるために各テーブルのIDを独自のIDに変更した。
+        - AutoincrementのIntの変わりに、アルファベットと数字をランダムに組み合わせてStringとしてIDを生成した。
+    - Blade上のチェックボックスをDBと連携して表示。更新されるようにした。
+    - BreezeでUser管理の基本形を活用して、独自のユーザー管理機能を実装した
+      
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ③難しかった点・次回トライしたいこと(又は機能)
+- Laravel のフレームワークを理解し、基本的な活用ができるようになるのにとても苦労した。
+    - ヤマザキ先生のビデオを参考にしながらも、自走で使えるようになるにはかなり苦労した。
+- 上記の主キーを独自の文字列にする際、Laravel標準の主キーの属性やフィールドを変える方法を見つけるのに２日を溶かした。
+- 主キーを変更したことで、Model、Controller、View（Blade）の連携を全ていじることになり、多発するエラーを解決するのにほとんどの時間を時間を費やした。
+- 上記のチェックボックスが、Offの時にデーターベースに反映しない原因を見つけるのに苦労した。
+  
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ④質問・疑問・感想、シェアしたいtips等なんでも
+[質問]
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+[疑問]　
+Viewを作るのにBootstrap5のテンプレートの活用を試みたが、購入したソースコードの展開方法が分からなかった。
+HTMLとCSSの展開方法には多くの文献があったが、ソースコードの展開方法は見つけられなかった。　
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+[感想]　
+  
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+[tips]　
+  
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+[参考記事]
