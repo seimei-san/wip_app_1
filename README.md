@@ -12,10 +12,12 @@
     - ユーザープロファイル (profile)
     - ユーザーとグループの紐付け (user group)
 - V:Viewを作る時間がなかったので、とりあえずMとCの動作を確認するために、ヤマザキ先生のビデオで紹介されたViewを改造して作った。
-    - 組織情報 (domain)
-    - ![image](https://github.com/seimei-san/wip_app_1/assets/53326909/959466c5-e7b4-4b85-b576-290f349dea01)
     - ユーザー (user)
-    - ![image](https://github.com/seimei-san/wip_app_1/assets/53326909/858ee963-7623-4d79-9b4c-056307e305e0)
+        - ![image](https://github.com/seimei-san/wip_app_1/assets/53326909/c382eaec-d06d-40c5-bd01-a446be1e21ef)
+    - 組織情報 (domain)
+        - ![image](https://github.com/seimei-san/wip_app_1/assets/53326909/68cd08da-a153-43d7-998a-12638384994b)
+    - ユーザーグループ (group)    - 
+        - ![image](https://github.com/seimei-san/wip_app_1/assets/53326909/c6fc0c3b-81be-459f-bc4e-ab3f116ea09f)
 
 
 ## ②工夫した点・こだわった点
