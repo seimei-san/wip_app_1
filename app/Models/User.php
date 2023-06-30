@@ -18,6 +18,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'user_id',
+        'domain_id',
+        'user_active',
         'name',
         'email',
         'password',
@@ -42,4 +45,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public $incrementing = false;
+    protected $table = 'wip_users';
+    protected $primaryKey = 'user_id';
+    protected $keyType = 'string';
+    
 }

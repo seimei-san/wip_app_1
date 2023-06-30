@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class WipGroup extends Model
 {
+    public $increment = false;
+    protected $keyType = "string";
+    protected $primaryKey = "group_id";
     use HasFactory;
 }

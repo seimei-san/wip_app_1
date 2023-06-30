@@ -36,7 +36,13 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+
+        $tmpId = \App\Libs\Util::generateId('U', 20);
+        $request['user_id'] = $tmpId;
         $user = User::create([
+            'user_id' => $request->user_id,
+            'domain_id' => $request->domain_id, 
+            'user_active' => $request->user_active,
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
@@ -48,4 +54,7 @@ class RegisteredUserController extends Controller
 
         return redirect(RouteServiceProvider::HOME);
     }
+
+
 }
+

@@ -1,6 +1,31 @@
+
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
+
+        
+
+        <!-- wip_id -->
+        <!-- <div> -->
+            <!-- <x-input-label for="wip_id" :value="__('WIP ID')" /> -->
+            <!-- <x-text-input id="wip_id" class="block mt-1 w-full" type="text" name="wip_id" :value="old('wip_id')" required autofocus /> -->
+            <!-- <x-input-error :messages="$errors->get('wip_id')" class="mt-2" /> -->
+        <!-- </div> -->
+
+        <!-- domain_id -->
+        <!-- <div> -->
+            <!-- <x-input-label for="domain_id" :value="__('Domain ID')" /> -->
+            <x-text-input id="domain_id" class="block mt-1 w-full" type="hidden" name="domain_id" value="(NONE)" required autofocus />
+            <!-- <x-input-error :messages="$errors->get('domain_id')" class="mt-2" /> -->
+        <!-- </div>      -->
+
+        <!-- user_active -->
+        <!-- <div> -->
+            <!-- <x-input-label for="user_active" :value="__('Active')" /> -->
+            <x-text-input id="user_active" class="block mt-1 w-full" type="hidden" name="user_active" value=0 />
+            <!-- <x-text-input id="user_active" class="block mt-1 w-full" type="checkbox" name="user_active" value=1 required autofocus /> -->
+            <!-- <x-input-error :messages="$errors->get('user_active')" class="mt-2" /> -->
+        <!-- </div>      -->
 
         <!-- Name -->
         <div>
